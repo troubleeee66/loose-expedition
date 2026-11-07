@@ -1,6 +1,6 @@
 <!doctype html><html lang="ko"><head>
 <meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>동행 · 나도 숟가락 얹기</title>
+<title>마실 · 나도 숟가락 얹기</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,7 +79,7 @@ a.it{display:block}a.it:hover h3{text-decoration:underline;text-underline-offset
 <div class="sp sub">
  <div class="L">
   <a class="m" href="index.html">← 나도 숟가락 얹기</a>
-  <div><h1 class="sf">동행</h1></div>
+  <div><h1 class="sf">마실</h1></div>
   <div class="m">느슨한 원정대 · 풀씨 13기 · 2026.11 · 준비 중</div>
  </div>
  <div class="R">
@@ -104,7 +104,7 @@ a.it{display:block}a.it:hover h3{text-decoration:underline;text-underline-offset
   if(!a.length){none('아직 올라온 모집글이 없습니다.');return}
   b.innerHTML=a.map(function(c,i){
    return '<div class="card post" tabindex="0" role="button" aria-expanded="false" style="--r:'+rot[i%rot.length]+'deg">'+
-    '<div class="no">'+esc(c.kind||'동행')+'</div><div class="nick">'+esc(c.title)+'</div>'+
+    '<div class="no">'+esc(c.kind||'마실')+'</div><div class="nick">'+esc(c.title)+'</div>'+
     '<div class="meta">'+esc(c.when)+(c.where?' · '+esc(c.where):'')+'</div><div class="intro">'+esc(c.body)+'</div>'+
     '<div class="how">신청 방법<br>'+how(c.how)+'</div></div>'}).join('');
   [].forEach.call(b.querySelectorAll('.card'),function(el){
