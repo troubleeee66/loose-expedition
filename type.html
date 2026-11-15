@@ -133,7 +133,7 @@ function done(){
  var good=r.m+r.r+(r.p=='F'?'B':'F'),clash=r.m+(r.r=='P'?'S':'P')+r.p;
  var rows='',cols=[['P','F'],['P','B'],['S','F'],['S','B']];
  ['M','H','T'].forEach(function(m){rows+='<div class="h" style="opacity:.9;font-weight:700">'+MN[m]+'</div>';
-  cols.forEach(function(cp){var k=m+cp[0]+cp[1],cls=k==r.key?'me':(k==good||k==clash?'on':''),tag=k==r.key?'나':(k==good?'잘 맞음':(k==clash?'부딪힘':''));
+  cols.forEach(function(cp){var k=m+cp[0]+cp[1],cls=k==r.key?'me':(k==good?'on':''),tag=k==r.key?'나':(k==good?'잘 맞음':'');
    rows+='<div class="'+cls+'">'+T[k].n+(tag?'<span class="tag">'+tag+'</span>':'')+'</div>'});});
  var dots={3:'●●●',2:'●●○',1:'●○○'};
  var fit=t.f.map(function(f){return '<div class="fit"><b>'+f[0]+'</b><span class="dots">'+dots[f[1]]+'</span><span>'+f[2]+'</span></div>'}).join('');
@@ -189,8 +189,8 @@ function saveImg(d,btn){
   x.fillStyle='rgba(255,255,255,.65)';x.font='400 22px '+SANS;x.fillText('숟가락을 먼저 놓는 이유',90,yy+46);x.fillText('다시 들게 하는 것',560,yy+46);
   x.fillStyle='#fff';x.font='900 31px '+SERIF;var e1=wrapT(x,d.lose,90,yy+98,420,46),e2=wrapT(x,d.back,560,yy+98,430,46);
   yy=Math.max(e1,e2)+10;hl(x,yy);
-  x.fillStyle='rgba(255,255,255,.65)';x.font='400 22px '+SANS;x.fillText('잘 맞음',90,yy+46);x.fillText('부딪힘',540,yy+46);
-  x.fillStyle='#fff';x.font='900 36px '+SERIF;x.fillText(T[d.good].n,90,yy+96);x.fillText(T[d.clash].n,540,yy+96);
+  x.fillStyle='rgba(255,255,255,.65)';x.font='400 22px '+SANS;x.fillText('잘 맞음',90,yy+46);
+  x.fillStyle='#fff';x.font='900 36px '+SERIF;x.fillText(T[d.good].n,90,yy+96);
   x.fillStyle='rgba(255,255,255,.7)';x.font='400 22px '+SANS;x.fillText('나도 숟가락 얹기 · 느슨한 원정대 · 풀씨 13기',90,H-60);
   cv.toBlob(function(b){btn.textContent=old;window.__lastImg=cv.toDataURL('image/png');if(!b)return;var f=new File([b],'숟가락유형_'+d.t.n+'.png',{type:'image/png'});
    if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f]}).catch(function(){})}
